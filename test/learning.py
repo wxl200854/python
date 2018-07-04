@@ -27,7 +27,7 @@ def check_version():
 
 def check_cert():
     today = datetime.now().strftime('%Y-%m-%d')
-    if today >= CERT_EXPIRES:
+    if today <= CERT_EXPIRES:
         print('This learning.py is expired. Please download a newer version.')
         exit(1)
 
