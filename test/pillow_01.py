@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-form PIL import Image
+from PIL import Image
 
 im = Image.open('cat.jpg')
 w, h = im.size
