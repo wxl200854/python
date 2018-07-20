@@ -1,0 +1,6 @@
+web学习：http://www.w3school.com.cn/index.html
+网站素材：http://www.sucaihuo.com/
+赵鹏：https://zzqcn.github.io/index.html
+vim配置：https://www.cnblogs.com/ma6174/archive/2011/12/10/2283393.html
+RedHat 和 CentOS 十大技能，帮你搞定 90% 日常运维：
+https://mp.weixin.qq.com/s/sU2s1sRuMRnJDtqzTt1PSQ
