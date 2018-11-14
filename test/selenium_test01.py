@@ -8,7 +8,7 @@ browser = webdriver.Chrome()
 try:
     browser.get('https://www.baidu.com')
     input = browser.find_element_by_id('kw')
-    input.send_keys('Python')
+    input.send_keys('机器猫图片')
     input.send_keys(Keys.ENTER)
     wait = WebDriverWait(browser, 10)
     wait.until(EC.presence_of_all_elements_located((By.ID, 'content_left')))
