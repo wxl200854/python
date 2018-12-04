@@ -9,7 +9,7 @@ def get_page_index(offset, keyword):
     data={
         'offset': offset,
         'format': 'json',
-        'keyword': '街拍',
+        'keyword': keyword,
         'autoload': 'true',
         'count': 20,
         'cur_tab': 3,
@@ -33,8 +33,17 @@ def parse_page_index(html):
             yield item.get('article_url')
 
 def get_page_detail(url):
+    headers = {
+        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.9',
+        'cache-control': 'max-age=0',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+        'referer':'https://www.toutiao.com/a6602192672943768067/'
+    }
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers=headers)
         if response.status_code == 200:
             return response.text
         return None
@@ -46,7 +55,7 @@ def parse_page_detail(html):
     soup = BeautifulSoup(html, 'lxml')
     title = soup.select('title')[0].get_text()
     print(title)
-    image_pattern = re.compile('gallery: JSON.parse((.*?),', re.S)
+    image_pattern = re.compile('gallery: JSON\.parse\("(.*?)"\),', re.S)
     result = re.search(image_pattern, html)
     if result:
         print(result.group(1))
