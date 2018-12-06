@@ -11,7 +11,7 @@ import os
 from hashlib import md5 
 from multiprocessing import Pool
 
-client = pymongo.MongoClient(MONGO_URL)
+client = pymongo.MongoClient(MONGO_URL, connect=False)
 db = client[MONGO_DB]
     
 def get_page_index(offset, keyword):
