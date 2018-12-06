@@ -9,6 +9,7 @@ from config import *
 import pymongo
 import os
 from hashlib import md5 
+from multiprocessing import Pool
 
 client = pymongo.MongoClient(MONGO_URL)
 db = client[MONGO_DB]
@@ -87,15 +88,6 @@ def save_to_mongo(result):
 
 def download_image(url):
     print('正在下载', url)
-   # headers = {
-   #     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-    #    "accept-encoding": "gzip, deflate, br",
-    #    "accept-language": "zh-CN,zh;q=0.9",
-     #   "cache-control": "max-age=0",
-     #   "upgrade-insecure-requests": "1",
-     #   "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
-     #   "referer": url
-    #}   
     try:
         response = requests.get(url)
         if response.status_code == 200:
@@ -111,8 +103,8 @@ def save_image(content):
         with open(file_path, 'wb') as f:
             f.write(content)
 
-def main():
-    html = get_page_index(0, '街拍')
+def main(offset):
+    html = get_page_index(offset, KEYWORD)
     for url in parse_page_index(html):
         html = get_page_detail(url)
         if html:
@@ -121,4 +113,6 @@ def main():
                 save_to_mongo(result)
 
 if __name__ == "__main__":
-    main()
+    groups = [x*20 for x in range(GROUP_START, GROUP_END+1)]
+    p = Pool()
+    p.map(main, groups)
