@@ -87,17 +87,17 @@ def save_to_mongo(result):
 
 def download_image(url):
     print('正在下载', url)
-    headers = {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "zh-CN,zh;q=0.9",
-        "cache-control": "max-age=0",
-        "upgrade-insecure-requests": "1",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
-        "referer": url
-    }   
+   # headers = {
+   #     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+    #    "accept-encoding": "gzip, deflate, br",
+    #    "accept-language": "zh-CN,zh;q=0.9",
+     #   "cache-control": "max-age=0",
+     #   "upgrade-insecure-requests": "1",
+     #   "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
+     #   "referer": url
+    #}   
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url)
         if response.status_code == 200:
             save_image(response.content)
         return None
@@ -107,7 +107,6 @@ def download_image(url):
 
 def save_image(content):
     file_path = '{0}/{1}.{2}'.format(os.getcwd(), md5(content).hexdigest(), 'jpg')
-    print(os.getcwd())
     if not os.path.exists(file_path):
         with open(file_path, 'wb') as f:
             f.write(content)
