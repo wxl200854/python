@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 import codecs
 from config import *
 import pymongo
+import os
+from hashlib import md5 
 
 client = pymongo.MongoClient(MONGO_URL)
 db = client[MONGO_DB]
@@ -40,14 +42,13 @@ def parse_page_index(html):
 
 def get_page_detail(url):
     headers = {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-        'accept-encoding': 'gzip, deflate, br',
-        'accept-language': 'zh-CN,zh;q=0.9',
-        'cache-control': 'max-age=0',
-        'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
-        #'referer':'https://www.toutiao.com/a6602192672943768067/'
-        'referer': url
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "zh-CN,zh;q=0.9",
+        "cache-control": "max-age=0",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
+        "referer": url
     }
     try:
         response = requests.get(url, headers=headers)
@@ -70,10 +71,8 @@ def parse_page_detail(html, url):
         if json_data and 'sub_images' in json_data.keys():
             sub_images = json_data.get('sub_images')
             images = [item.get('url') for item in sub_images]
-            #data = json.loads(codecs.getdecoder('unicode_escape')(result.group(1)))        
-            #if data and 'sub_images' in data.keys():
-            # sub_images = data.get('sub_images')
-            #images = [item.get('url') for item in sub_images]
+            for image in images:
+                download_image(image)
             return {
                 'title': title,
                 'url': url,
@@ -84,7 +83,34 @@ def save_to_mongo(result):
     if db[MONGO_TABLE].insert(result):
         print("存储到mongodb成功", result)
         return True
-    return False            
+    return False       
+
+def download_image(url):
+    print('正在下载', url)
+    headers = {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "zh-CN,zh;q=0.9",
+        "cache-control": "max-age=0",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
+        "referer": url
+    }   
+    try:
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            save_image(response.content)
+        return None
+    except RequestException:
+        print('请求图片出错', url)
+        return None
+
+def save_image(content):
+    file_path = '{0}/{1}.{2}'.format(os.getcwd(), md5(content).hexdigest(), 'jpg')
+    print(os.getcwd())
+    if not os.path.exists(file_path):
+        with open(file_path, 'wb') as f:
+            f.write(content)
 
 def main():
     html = get_page_index(0, '街拍')
@@ -92,7 +118,8 @@ def main():
         html = get_page_detail(url)
         if html:
             result = parse_page_detail(html, url)
-            save_to_mongo(result)
+            if result:
+                save_to_mongo(result)
 
 if __name__ == "__main__":
     main()
