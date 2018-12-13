@@ -19,6 +19,9 @@ def search(url):
     submit= wait.until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "#search > div > div.form > button"))
     )
+    page_num = wait.until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, '#J_bottomPage > span.p-skip > em:nth-child(1) > b'))
+    )
     input.send_keys('美食')
     submit.click()
 
