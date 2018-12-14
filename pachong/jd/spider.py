@@ -3,30 +3,78 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from config import *
+from selenium.common.exceptions import TimeoutException   
+from selenium.common.exceptions import StaleElementReferenceException
+import re 
+from pyquery import PyQuery as pq
 
-#options = webdriver.ChromeOptions()
-#options.add_argument('lang=zh_CN.UTF-8')
-#options.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
-#options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36"')
+
 browser = webdriver.Chrome()
 wait = WebDriverWait(browser, 10)
 
-def search(url):
-    browser.get(url)
-    input = wait.until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "#key"))
+def search():
+    try:
+        browser.get(URL)
+        input = wait.until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "#key"))
+        )
+        submit= wait.until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "#search > div > div.form > button"))
+        )
+        input.send_keys('美食')
+        submit.click()
+        page_num = wait.until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, '#J_bottomPage > span.p-skip > em:nth-child(1) > b'))
+        )
+        get_detail()
+        return page_num.text
+    except TimeoutException:
+        return search()
+
+def next_page(num):
+    try:
+        input = wait.until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "#J_bottomPage > span.p-skip > input"))
+        )
+        submit= wait.until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, "#J_bottomPage > span.p-skip > a"))
+        )
+        input.clear()
+        input.send_keys(num)
+        submit.click()
+        wait.until(
+            EC.text_to_be_present_in_element((By.CSS_SELECTOR, "#J_bottomPage > span.p-num > a.curr"), str(num))
+        )
+        get_detail()
+    except TimeoutException:
+        return next_page(num)
+    except StaleElementReferenceException:
+        return next_page(num)
+
+def get_detail():
+    wait.until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "#J_goodsList .gl-warp .gl-item"))
     )
-    submit= wait.until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, "#search > div > div.form > button"))
-    )
-    page_num = wait.until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, '#J_bottomPage > span.p-skip > em:nth-child(1) > b'))
-    )
-    input.send_keys('美食')
-    submit.click()
+    html = browser.page_source
+    result = pq(html)
+    items = result("#J_goodsList .gl-warp .gl-item").items()
+    for item in items:
+        print(type(item.find('.p-img a')))
+        product = {
+            'pic': item.find('.p-img').find('a').find('img').attr('src'),
+            'price': item.find('.p-price').text(),
+            'title': item.find('.p-name').text(),
+            'deal': item.find('.p-commit').text(),
+            'shop': item.find('.p-shop').text()
+        }
+       # print(product)
+
 
 def main():
-    search(URL)
+    result = search()
+    total = int(re.compile('(\d+)').search(result).group(1))
+    for i in range(2, total + 1):
+        next_page(i)
 
 if __name__ == "__main__":
     main()
