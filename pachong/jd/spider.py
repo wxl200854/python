@@ -7,10 +7,17 @@ from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import StaleElementReferenceException
 import re 
 from pyquery import PyQuery as pq
+import pymongo
 
+client = pymongo.MongoClient(MONGO_URL)
+db = client[MONGO_DB]
 
 browser = webdriver.Chrome()
 wait = WebDriverWait(browser, 10)
+
+def save(result):
+    if db[MONGO_TABLE].insert(result):
+            
 
 def search():
     try:
@@ -59,15 +66,14 @@ def get_detail():
     result = pq(html)
     items = result("#J_goodsList .gl-warp .gl-item").items()
     for item in items:
-        print(type(item.find('.p-img a')))
         product = {
-            'pic': item.find('.p-img').find('a').find('img').attr('src'),
+            'pic': item.find('.p-img a img').attr('data-lazy-img'),
             'price': item.find('.p-price').text(),
             'title': item.find('.p-name').text(),
             'deal': item.find('.p-commit').text(),
             'shop': item.find('.p-shop').text()
         }
-       # print(product)
+        print(product)
 
 
 def main():
