@@ -17,7 +17,8 @@ wait = WebDriverWait(browser, 10)
 
 def save(result):
     if db[MONGO_TABLE].insert(result):
-            
+        print("插入mongodb成功", result)
+    return False    
 
 def search():
     try:
@@ -73,14 +74,14 @@ def get_detail():
             'deal': item.find('.p-commit').text(),
             'shop': item.find('.p-shop').text()
         }
-        print(product)
+        #print(product)
 
 
 def main():
     result = search()
     total = int(re.compile('(\d+)').search(result).group(1))
     for i in range(2, total + 1):
-        next_page(i)
+        save(next_page(i))
 
 if __name__ == "__main__":
     main()
