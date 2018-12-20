@@ -12,14 +12,19 @@ import pymongo
 client = pymongo.MongoClient(MONGO_URL)
 db = client[MONGO_DB]
 
-browser = webdriver.Chrome()
+browser = webdriver.PhantomJS(service_args=SERVICE_ARGS)
+#browser = webdriver.Chrome()
 wait = WebDriverWait(browser, 10)
 
-def save(result):
-    if db[MONGO_TABLE].insert(result):
-        print("插入mongodb成功", result)
-    return False    
+browser.set_window_size(1400, 900)
 
+def save(result):
+    try:
+        if db[MONGO_TABLE].insert(result):
+            print("插入mongodb成功", result)
+    except Exception :
+        print("插入mongodb失败", result)
+    
 def search():
     try:
         browser.get(URL)
@@ -64,9 +69,11 @@ def get_detail():
         EC.presence_of_element_located((By.CSS_SELECTOR, "#J_goodsList .gl-warp .gl-item"))
     )
     html = browser.page_source
+    #print(html)
     result = pq(html)
     items = result("#J_goodsList .gl-warp .gl-item").items()
     for item in items:
+        #print(item)
         product = {
             'pic': item.find('.p-img a img').attr('data-lazy-img'),
             'price': item.find('.p-price').text(),
@@ -74,14 +81,19 @@ def get_detail():
             'deal': item.find('.p-commit').text(),
             'shop': item.find('.p-shop').text()
         }
-        #print(product)
+        save(product)
 
 
 def main():
-    result = search()
-    total = int(re.compile('(\d+)').search(result).group(1))
-    for i in range(2, total + 1):
-        save(next_page(i))
+    try:
+        result = search()
+        total = int(re.compile('(\d+)').search(result).group(1))
+        for i in range(2, total + 1):
+            next_page(i)
+    except Exception:
+        print("出错了")
+    finally:
+        browser.close()
 
 if __name__ == "__main__":
     main()
