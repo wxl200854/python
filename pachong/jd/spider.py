@@ -77,7 +77,7 @@ def get_detail():
         product = {
             'pic': item.find('.p-img a img').attr('data-lazy-img'),
             'price': item.find('.p-price').text(),
-            'title': item.find('.p-name').text(),
+            'title': item.find('.p-name').text().replace('\n', ' '),
             'deal': item.find('.p-commit').text(),
             'shop': item.find('.p-shop').text()
         }
