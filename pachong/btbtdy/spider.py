@@ -19,6 +19,7 @@ def parse_index(response):
     html = soup.select('.new-ul')
     print(html)
 
+
 def main():
     url = 'http://www.btbtdy.net/hot/'
     response = get_index(url)
