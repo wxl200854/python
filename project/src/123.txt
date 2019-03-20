@@ -1,0 +1,706 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="天才宝贝的猎爹计划第1章 执行任务,天才宝贝的猎爹计划第1章 执行任务在线阅读">
+    <meta name="description" content="奇热小说提供天才宝贝的猎爹计划第1章 执行任务在线阅读">
+    <meta name="applicable-device" content="pc">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="mobile-agent" content="format=html5;url=https://m.qirexiaoshuo.com/book/11927/911378/">
+	<meta name="mobile-agent" content="format=xhtml;url=https://m.qirexiaoshuo.com/book/11927/911378/">
+	<link rel="canonical" href="https://www.qirexiaoshuo.com/book/11927/911378/">
+    <link href="//cj.qirexiaoshuo.com/static/pc/css/base.css?21" rel="stylesheet" type="text/css" />
+    <script src="//cj.qirexiaoshuo.com/static/pc/js/jquery-3.1.1.min.js"></script>
+    <script src="//cj.qirexiaoshuo.com/static/pc/js/jquery.cookie.js"></script>
+	<script src="//cj.qirexiaoshuo.com/static/pc/layer/layer.js"></script>
+	<script src="//cj.qirexiaoshuo.com/static/pc/js/public.js?10"></script>
+	<script src="//cj.qirexiaoshuo.com/static/pc/js/tool.js?10"></script>
+    <title>「天才宝贝的猎爹计划」第1章 执行任务在线阅读 - 奇热小说</title>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+	<div id="vue-box" v-bind:class="theme">
+    <header class="header yd_header">
+        <div class="inner">
+            <div class="logo">
+                <a href="/">
+                    <img src="//cj.qirexiaoshuo.com/static/pc/image/logo.png" alt="奇热小说">
+                    <span>奇热小说</span>
+                </a>
+            </div>
+            <div class="pull_left">
+                <a href="/"><i class="icon_home"></i>首页</a>
+                <a href="/cate/"><i class="icon_classify"></i>书库</a>
+            </div>
+			<div class="search read_search">
+                <input id="keyword" type="text" placeholder="" value="">
+                <input id="default_search" type="hidden" value="">
+                <button onclick="go_search()">搜小说</button>
+                
+            </div>
+            <div class="pull_right">
+                                <a href="javascript:void(0)" v-on:click="goPay"><i class="icon_recharge"></i>充值</a>
+                <a href="javascript:void(0)" v-on:mouseover="mouseover($event)"><i class="icon_time"></i>最近阅读</a>
+                <div class="intro" id="show_edit_menu"> 
+	                <a href="/my/bookshelf/" class="name" target="_blank"><i class="icon_login"></i>{{userInfo?userInfo.nickname:''}}</a>
+	                <div class="layer_info layer_yd_info" id="show_edit_menu_d" style="top:53px;display: none">
+				      <div class="tit" onclick="window.location.href='/my/bookshelf/'">阳光普照</div>
+				      <div class="number">
+				          <span>0</span>
+				          <p>书币</p>
+				      </div>
+				      <div class="number">
+				          <span>10</span>
+				          <p>书券</p>
+				      </div>
+				      <div class="btn">
+				          <a href="/recharge/">立即充值</a>
+				      </div>
+				      <div class="quit">
+				          <a href="/login/login_out/"><i class="icon_tc"></i>退出登录</a>
+				      </div>
+				  </div>
+			    </div>            </div>
+            <div class="layer_lately_wrapper" v-show="show_redlog==1">
+	            <div class="layer_lately">
+	                <ul>
+	                    <li v-for="item in readlogs">
+	                        <div class="cover"><a :href="'/book/'+item.id+'/'"><img :src="item.thumb"></a></div>
+	                        <div class="warp">
+	                            <a :href="'/book/'+item.id+'/'" class="tit" v-text="item.name"></a>
+	                            <p>更新到：<a :href="'/book/'+item.id+'/0/'+item.cnum" class="blue" v-text="item.lastCharpterName"></a></p>
+	                            <p>阅读到：<a :href="'/book/'+item.id+'/'+'/0/'+(item.readCount==0?1:item.readCount)">第{{item.readCount==0?1:item.readCount}}章</a></p>
+	                        </div>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="layer_lately lately_none" v-if="!readlogs">
+	                <img src="//cj.qirexiaoshuo.com/static/pc/image/zan_none.png" class="avatar">
+	                <p>{{readlogs === null?'正在加载中...':'暂无阅读记录'}}</p>
+	            </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="location">当前位置：
+	    <a href="/">奇热小说</a>  > 
+	    <a href="/cate/19/" target="_blank">现代言情</a> > 
+	    <a href="/book/11927/">天才宝贝的猎爹计划</a> > 
+	    	第1章 执行任务  	</section>
+
+    <section class="float_wrap">
+        <div class="inner">
+            <ul>
+                <li><a href="javascript:void(0)" v-on:click="showBox();show_charpters=1" v-bind:class="{'active':show_charpters==1}"><i class="icon_catalog"></i><span>小说目录</span></a></li>
+                <li><a href="javascript:void(0)" v-on:click="showBox();show_setbox=1" v-bind:class="{'active':show_setbox==1}"><i class="icon_setup"></i><span>阅读设置</span></a></li>
+                <li><a href="javascript:void(0)" v-on:click="showBox();show_qrcodebox=1" v-bind:class="{'active':show_qrcodebox==1}"><i class="icon_read"></i><span>手机阅读</span></a></li>
+                <li><a href="javascript:void(0)" v-on:click="addBookShelf" v-bind:class="{'active':inBookShelf==1}"><i class="icon_join"></i><span>{{inBookShelf==1?'已在书架':'加入书架'}}</span></a></li>
+                <li><a href="/book/11927/"><i class="icon_enter"></i><span>进入书页</span></a></li>
+            </ul>
+        </div>
+        <div class="layer_box catalog" v-if="show_charpters==1">
+            <div class="title">
+                <h3 class="orange">所有章节</h3>
+                <div class="close">
+                    <a href="javascript:void(0)" v-on:click="show_charpters=0"></a>
+                </div>
+            </div>
+            <div class="entry">
+                <ul>
+                    <li v-for="item in category">
+	                    <a :href="'/book/11927/'+item.cid+'/'">
+	                    	<span v-text="item.charpterName"></span>
+	                    	<i class="icon_lock" v-if="item.vip>0 && item.unlock==0"></i>
+	                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layer_box set_up" v-if="show_setbox==1">
+            <div class="title">
+                <h3>设置</h3>
+                <div class="close">
+                    <a href="javascript:void(0)" v-on:click="show_setbox=0"></a>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="item theme">
+                    <div class="t">阅读主题</div>
+                    <ul>
+                        <li v-bind:class="{'active':'white_box'==theme}" v-on:click="theme='white_box'"><span class="white"></span></li>
+                        <li v-bind:class="{'active':'yellow_box'==theme}" v-on:click="theme='yellow_box'"><span class="orange"></span></li>
+                        <li v-bind:class="{'active':'green_box'==theme}" v-on:click="theme='green_box'"><span class="green"></span></li>
+                        <li v-bind:class="{'active':'blue_box'==theme}" v-on:click="theme='blue_box'"><span class="blue"></span></li>
+                        <li v-bind:class="{'active':'pink_box'==theme}" v-on:click="theme='pink_box'"><span class="pink"></span></li>
+                        <li v-bind:class="{'active':'gray_box'==theme}" v-on:click="theme='gray_box'"><span class="gray"></span></li>
+                        <li v-bind:class="{'active':'black_box'==theme}" v-on:click="theme='black_box'"><span class="black"><em></em></span></li>
+                    </ul>
+                </div>
+                <div class="item font">
+                    <div class="t">正文字体</div>
+                    <ul>
+                        <li><a href="javascript:void(0)" v-bind:class="{'active':'content_yh'==font_family}" v-on:click="font_family='content_yh'">雅黑</a></li>
+                        <li><a href="javascript:void(0)" v-bind:class="{'active':'content_st'==font_family}" v-on:click="font_family='content_st'">宋体</a></li>
+                        <li><a href="javascript:void(0)" v-bind:class="{'active':'content_ks'==font_family}" v-on:click="font_family='content_ks'">楷书</a></li>
+                    </ul>
+                </div>
+                <div class="item mode">
+                    <div class="t">阅读方式</div>
+                    <ul>
+                        <li><a href="javascript:void(0)" v-bind:class="{'active':'book'==read_type}" v-on:click="read_type='book'"><i class="icon_fan"></i></a></li>
+                        <li><a href="javascript:void(0)" v-bind:class="{'active':'screen'==read_type}" v-on:click="read_type='screen'"><i class="icon_up_down"></i></a></li>
+                    </ul>
+                </div>
+                <div class="item size">
+                    <div class="t">字体大小</div>
+                    <ul>
+                        <li><a href="javascript:void(0)" v-on:click="font_size=font_size-2">A-</a></li>
+                        <li><span>{{font_size}}</span></li>
+                        <li><a href="javascript:void(0)" v-on:click="font_size=font_size+2">A+</a></li>
+                    </ul>
+                </div>
+            	<div class="checkbox" v-if="bookInfo.vip==2" v-on:click="auto_unlock=auto_unlock==1?0:1">
+                    <input type="checkbox" v-model="auto_unlock">
+                    <label for="checkbox1">自动解锁下一章，不再提示</label>
+                </div>
+                <div class="btn">
+                    <button v-on:click="font_size=16;font_family='content_yh';read_type='book';theme='yellow_box';">恢复默认</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer_box phone_read" v-if="show_qrcodebox==1">
+            <div class="title">
+                <h3>手机阅读</h3>
+                <div class="close">
+                    <a href="javascript:void(0)" v-on:click="show_qrcodebox=0"></a>
+                </div>
+            </div>
+            <div class="entry">
+                <p><img src="//cj.qirexiaoshuo.com/static/pc/image/qrcode.png"></p>
+                <p>扫码安装APP马上领书券</p>
+            </div>
+        </div>
+
+    </section>
+        
+    <!-- 免费内容 前十章 -->
+    <article id="content_box" class="content mar_top" v-on:click="showBox" v-if="!charpters_obj[sort]">
+    	<!-- 无数据时占位 -->
+   		<div class="title">
+            <h1>第1章 执行任务</h1>
+            <p>小说：<a href="/book/11927/" class="blue">天才宝贝的猎爹计划</a><i class="arr"></i>作者：良辰千语<i class="arr"></i>分类：现代言情<i class="arr"></i>字数：2436</p>
+        </div>
+        <div v-bind:class="'entry '+ font_family" v-bind:style="'height:600px;font-size: '+font_size+'px'">
+        <p>安静豪华的酒店走廊里，顾小北的心脏紧张地跳动着，她的双手放在胸前，紧张地握着房卡，假发掩盖的耳麦里再次传来队长林萧那磁性浑朴的声音。</p><p>“顾小北，准备好了吗？”他略微低哑的声音中，还有一丝担忧。</p><p>“好了！”</p><p>顾小北用极轻的声音回应着，这是她第一次出任务，不过这个任务比想象中要艰难！</p><p>她需要扮成援交女郎接近目标罪犯，将她所带的迷药想办法让对方服下，并配合队友的捉捕行动。</p><p>很简单但是也很危险。</p><p>顾小北再次确定了门牌号，1909，没错！</p><p>门里面就是他们要捉捕的对象，这几年在东南亚新近崛起的大毒枭。</p><p>听说这个男人很年轻，喜好变装出现，如果不是这次他们掌握了确定的线索，也不会全员出动。</p><p>“顾小北，不要怕，加油！”耳麦里传来林萧鼓励的声音。</p><p>“嗯！”</p><p>她轻轻地回应，然后深深地吸了一口气，整理了一下自己的妆容，面向走廊墙上的镜子，看到镜中映出来化着浓妆的女人，她真不敢相信是自己，居然可以变得这样。</p><p>尽管看上去很不适应，但她还是很希望自己能符合那个大毒枭的口味。</p><p>在房卡划过门锁上方后，‘卡嗒’一声，门开了。</p><p>顾小北鼓足勇气，同时很警惕地走进去。</p><p>房间里灯光晕暗，浴室里传来哗哗的流水声，目标人物果然在这里。</p><p>她顺便观察了一下房间内的摆设，与之前他们看到的同类房间一样，心里不由得松了口气，这样就好办多了。</p><p>看了一眼腕上的手表，她还有不到20分钟的时间，也是说如果20钟内她不把这个大毒枭搞定，那么有危险的不止是她，还要有一会就冲进来的同事。</p><p>就在这时，浴室里的水声消失，紧接着门被拉开。</p><p>听到声音的顾小北马上转过身去，并刻意地摆出搔首弄姿地样子。</p><p>于是刚洗完澡的乔迈，在打开浴室门时，就看到站在床前的女人。</p><p>巴掌大的小脸几乎全是化妆品的颜色，让人看不出来本来的面貌，头顶夸张的爆炸烫发，最醒目的腥红色嘴唇，在看到他走出来时挤出来那种令人厌恶的笑容。</p><p>今天是他二十二岁生日，看来那几个死党不恶心死他誓不罢休。</p><p>为了躲避无聊的事，他都已经换了房间了，竟然还能把这种极品送到这里来。</p><p>他不禁恼怒地喝斥着说：“出去，不管是谁叫你来的，我不需要特殊服务！”</p><p>看到眼前这个只系着浴巾身材绝好的男人，他拥有着匀称的小麦色皮肤，腹肌还有若隐若现的人鱼线，让人看了血脉喷张。</p><p>顾小北的脸还是红了，但好在脸上有着厚厚的粉底并打了腮红，所以看起来她脸红的并不明显。</p><p>不过更让她惊讶的是，这个人竟然真如线报所说的，如此年轻。</p><p>他们研究这个毒枭时年龄定位在30到40之间，可是因为没有人看过他的真面目，所以的确没人知道他真实年龄。</p><p>眼前的这个男人，墨色的发丝上还滴着水滴，棱角分明的脸庞，俊美精致的五官，现在他没有进行任何变妆，所以顾小北认定，眼前的这张脸就是毒枭真实的容貌。</p><p>她刚刚已经简单搜了床边和他的衣物，没发现枪支，可是并不代表此时就是安全的。</p><p>“先生！”</p><p>顾小北故意嗲着声音，脸上堆满了笑容，走过来时刚伸出手却被这男人一下子打开。</p><p>“我说了不需要。”</p><p>乔迈凛声警告着她，不想再让她靠近，他是极其讨厌被这种女人碰。</p><p>因为他有轻微的洁癖，尤其是对这种女人，谁知道她们身上有没有病。</p><p>他这样的状况是顾小北没料到的，她以为这类男人应该差不多都是爱偷腥的猫，有白白送上门的艳福，肯定要直接扑上来，可她却没想到如此出师不利。</p><p>“帅哥！”就算碰了下钉子，但顾小北也没有想退缩，她扔了一粒口香糖到自己嘴里，同时也递给这个男人。</p><p>不过手伸出去，却丝毫没被人家放在眼里，鸟都不鸟一下。</p><p>“难道他们没付你钱？”乔迈皱着眉头说着，冷峻的脸上多了几分不耐烦。</p><p>注意到这个男人脸上明显的不耐烦，顾小北知道自己也没有多少时间能耗下去。</p><p>10分钟内如果再次搞不定他，她这次任务算彻底失败吧！</p><p>不仅失败，更会连累到其他的同事们，况且这是她第一次任务，她不允许自己失败。</p><p>想到这儿，她伸出手臂，直接勾住他的脖子献上自己的唇，尽管有些笨拙，但动作却很快，并将嘴里刚刚那颗口香糖用小舌推到这个男人的口中。</p><p>这个女人所做的一切都是乔迈所料不及的，他没想到怎么在这个女人靠近时，他忘了推开她。</p><p>感受这柔软的身体直接贴着他，那两条手臂像蛇一样缠住他的脖子，当感觉那灵动的小舌将某种东西推到他口中时，乔迈在心里冷笑，MD一只鸡而已竟然也敢算计他乔三。</p>        </div>
+    </article>    <!-- 免费内容end -->
+    <article v-bind:class="(charpters_obj[sort] && charpters_obj[sort].vip>0 && charpters_obj[sort].unlock==0)?'content pay_unlock mar_top':'content mar_top'" v-on:click="showBox"
+    		v-if="(read_type=='book' && charpters_obj[sort]) || charpters.length == 1">
+    	<!-- 单章类型 -->
+   		<div class="title">
+            <h1 :id="'charpter_'+sort" v-text="charpters_obj[sort].charpterName"></h1>
+            <p>小说：<a href="/book/11927/" class="blue">天才宝贝的猎爹计划</a><i class="arr"></i>作者：良辰千语<i class="arr"></i>分类：现代言情<i class="arr"></i>字数：{{charpters_obj[sort].words}}</p>
+        </div>
+        <div v-bind:class="'entry '+ font_family" v-bind:style="'font-size: '+font_size+'px'" v-html="charpters_obj[sort].content" v-if="charpters_obj[sort] && (charpters_obj[sort].vip==0 || charpters_obj[sort].unlock==1)">
+        </div>
+        
+        <div class="entry" v-if="charpters_obj[sort] && charpters_obj[sort].vip>0 && charpters_obj[sort].unlock==0">
+            <div class="item">
+                <span>本章为{{bookInfo.vip==1?'VIP':'付费'}}章节，支持作者，解锁后继续阅读</span>
+                <p v-if="bookInfo.vip>=2">账户余额：<i class="red" v-text="userInfo?userInfo.v2_bookcoin:0"></i>书币  <i class="red" v-text="userInfo?userInfo.bookvoucher:0"></i>书券</p>
+                <p v-if="bookInfo.vip>=2">{{bookInfo.vip==3?'本书':'本章'}}解锁：<i class="red" v-text="unlockBookcoin"></i>书币</p>
+            </div>
+            
+            <div class="btn" v-if="bookInfo.vip>=2">
+                <button v-if="userInfo && userInfo.v2_bookcoin+userInfo.bookvoucher >= unlockBookcoin" v-on:click="unlockCharpter">解锁{{bookInfo.vip==3?'全书':'本章'}}</button>
+                <button v-if="userInfo && userInfo.v2_bookcoin+userInfo.bookvoucher < unlockBookcoin" v-on:click="unlockCharpter">马上充值</button>
+                <button v-if="!userInfo"  onclick="$('#show_login_lay').show();">请先登录</button>
+            </div>
+            <div class="btn" v-else>
+                <button v-on:click="unlockCharpter">开通VIP</button>
+            </div>
+            <div class="intro">
+                <p><img src="//cj.qirexiaoshuo.com/static/pc/image/qrcode.png"></p>
+                <p>扫描二维码，下载手机客户端</p>
+                <p class="red">立即领取100+书券</p>
+            </div>
+        </div>
+    </article>
+    	<!-- 瀑布类型 -->
+    	
+    <template v-else v-for="(item,key,index) in charpters_obj">
+   	<article v-if="charpters_obj[key]" v-bind:class="(charpters_obj[key].vip>0 && charpters_obj[key].unlock==0)?'content pay_unlock mar_top':'content mar_top'" 
+	   	v-on:click="showBox"
+	   	>
+    	<div :id="'charpter_'+key">
+	        <div class="title">
+	            <h1 v-text="charpters_obj[key].charpterName"></h1>
+	            <p>小说：<a href="/book/11927/" class="blue">天才宝贝的猎爹计划</a><i class="arr"></i>作者：良辰千语<i class="arr"></i>分类：现代言情<i class="arr"></i>字数：{{charpters_obj[key].words}}</p>
+	        </div>
+	        <div v-bind:class="'entry '+ font_family" v-bind:style="'font-size: '+font_size+'px'" v-html="charpters_obj[key].content" v-if="charpters_obj[key].vip==0 || charpters_obj[key].unlock==1">
+	        </div>
+        </div>
+        <div class="entry" v-if="charpters_obj[key].vip>0 && charpters_obj[key].unlock==0">
+            <div class="item">
+                <span>本章为{{bookInfo.vip==1?'VIP':'付费'}}章节，支持作者，解锁后继续阅读</span>
+                <p v-if="bookInfo.vip>=2">账户余额：<i class="red" v-text="userInfo?userInfo.v2_bookcoin:0"></i>书币  <i class="red" v-text="userInfo?userInfo.bookvoucher:0"></i>书券</p>
+                <p v-if="bookInfo.vip>=2">本章解锁：<i class="red" v-text="unlockBookcoin"></i>书币</p>
+            </div>
+            <div class="btn" v-if="bookInfo.vip>=2">
+                <button v-if="userInfo && userInfo.v2_bookcoin+userInfo.bookvoucher >= unlockBookcoin" v-on:click="unlockCharpter">解锁{{bookInfo.vip==3?'全书':'本章'}}</button>
+                <button v-if="userInfo && userInfo.v2_bookcoin+userInfo.bookvoucher < unlockBookcoin" v-on:click="unlockCharpter">马上充值</button>
+                <button v-if="!userInfo"  onclick="$('#show_login_lay').show();">请先登录</button>
+            </div>
+            <div class="btn" v-else>
+                <button v-on:click="unlockCharpter">开通VIP</button>
+            </div>
+            <!-- <div class="checkbox" v-if="bookInfo.vip>=2" v-on:click="auto_unlock=auto_unlock==1?0:1">
+                <input type="checkbox" v-model="auto_unlock">
+                <label for="checkbox1">自动解锁下一章，不再提示</label>
+            </div> -->
+            <div class="intro">
+                <p><img src="//cj.qirexiaoshuo.com/static/pc/image/qrcode.png"></p>
+                <p>扫描二维码，下载手机客户端</p>
+                <p class="red">立即领取100+书券</p>
+            </div>
+        </div>
+    </article>
+	</template>
+    <!--<article class="content mar_top" 
+	   	v-on:click="showBox"
+	   	v-else v-for="(item,key,index) in charpters_obj"
+	   	>
+    
+    	<div >
+	        <div class="title">
+	            <h1>{{item}}---{{key}}==={{charpters_obj[key]?charpters_obj[key].charpterName:'n'}}</h1>
+	            </div></div></article> --> 
+    <section class="page_box mar_top" v-if="read_type=='book' && charpters.length == 1">
+        <ul>
+            <li><a  v-bind:class="{disabled:sort==1}"><i class="icon_upper"></i>上一章</a></li>
+            <li><a href="javascript:void(0)" v-on:click="showBox();show_charpters=1"><i class="icon_catalog"></i>目录</a></li>
+            <li><a href="/book/11927/911379/" v-bind:class="{disabled:sort==cnum}">下一章<i class="icon_next"></i></a></li>
+        </ul>
+    </section>
+    <section class="page_box mar_top" v-if="read_type=='book' && charpters.length > 1">
+        <ul>
+            <li><a href="javascript:void(0)" v-on:click="lastCharpter" v-bind:class="{disabled:sort==1}"><i class="icon_upper"></i>上一章</a></li>
+            <li><a href="javascript:void(0)" v-on:click="showBox();show_charpters=1"><i class="icon_catalog"></i>目录</a></li>
+            <li><a href="javascript:void(0)" v-on:click="nextCharpter" v-bind:class="{disabled:sort==cnum}">下一章<i class="icon_next"></i></a></li>
+        </ul>
+    </section>
+    
+    
+    	<div class="backdrop" style="display:block;" v-show="waitpay==1">
+	        <div class="item2p layer_wait">
+	            <div class="inner">
+	                <div class="close">
+	                    <a href="javascript:void(0)" v-on:click="waitpay = 0"></a>
+	                </div>
+	                <div class="title">
+	                    <h3>等待支付</h3>
+	                </div>
+	                <div class="item">
+	                    <p>请在新打开的页面中完成支付</p>
+	                    <a href="javascript:void(0)" v-on:click="finshPay">已完成支付</a>
+	                    <a href="/recharge/help/" target="_blank"> 支付遇到问题</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>	</div>
+	
+    	<script src="//cj.qirexiaoshuo.com/static/pc/js/vue.min.js"></script>
+    <script>
+    var vm = new Vue({
+	    el:'#vue-box',
+	    data:{
+	    	theme:'yellow_box',
+	    	font_family:'content_yh',
+	    	read_type:'book',
+	    	font_size:16,
+	    	show_setbox:0,
+	    	show_redlog:0,
+	    	show_charpters:0,
+	    	show_qrcodebox:0,
+	    	auto_unlock:1,
+	    	waitpay:0,
+	    	inBookShelf:0,
+	    	sort:1,
+	    	uid:124787384,
+	    	last_readlog_sort:0,//记录提交阅读记录的sort 避免重复提交
+	    	category:null,
+	    	charpters:[],
+	    	charpters_obj:{},
+	    	bookInfo:{"id":"11927","author":"\u826f\u8fb0\u5343\u8bed","cnum":"332","name":"\u5929\u624d\u5b9d\u8d1d\u7684\u730e\u7239\u8ba1\u5212","end":"1","tid":"19","channel":"2","thumb":"https:\/\/p.qirexiaoshuo.com\/uploads\/image\/20170213\/58a1263d4571a.jpg","title":"\u4e03\u5e74\u524d\uff0c\u5979\u8bef\u5c06\u4ed6\u5403\u5e72\u62b9\u51c0\uff0c\u8fd8\u5e26\u8d70\u4e86\u4ed6\u7684\u79cd\u3002\u4e03\u5e74\u540e\uff0c\u5979\u88ab\u81ea\u5bb6\u5929\u624d\u513f\u5b50\u8bbe\u8ba1\uff0c\u6210\u4e86\u4ed6\u7684\u8d34\u8eab\u4fdd\u9556\u3002OMG\uff0c\u8fd9\u4e0d\u662f\u4e03\u5e74\u524d\u7684\u6bd2\u8d29\u5148\u751f\u5417\uff1f\u5973\u4eba\uff0c\u8fd9\u6b21\u8be5\u662f\u4f60\u4ed8\u51fa\u4ee3\u4ef7\u7684\u65f6\u5019\u4e86","price":"0.07","resource":"\u4f5c\u5ba2\u6587\u5b66\u7f51","vip":"2","short_type":"0","short_num":"0","status":"2","mtime":"1521110471","type":"\u73b0\u4ee3\u8a00\u60c5","allvisit":"363272","fnum":"1148161","ctime":"1486622524","label":"\u9ed1\u9053,\u8179\u9ed1,\u603b\u88c1,\u5b9d\u5b9d","inBookShelf":0},
+	    	cnum:332,
+	    	userInfo:null,
+	    	readlogs:null,
+	    	unlockBookcoin:0,
+		},mounted: function () {
+			this.getUserInfo();
+			this.getSetting();
+		    			this.charpters_obj[1] =  {"id":"911378","sort":"1","charpterName":"\u7b2c1\u7ae0 \u6267\u884c\u4efb\u52a1","vip":"0","content":"<p>\u5b89\u9759\u8c6a\u534e\u7684\u9152\u5e97\u8d70\u5eca\u91cc\uff0c\u987e\u5c0f\u5317\u7684\u5fc3\u810f\u7d27\u5f20\u5730\u8df3\u52a8\u7740\uff0c\u5979\u7684\u53cc\u624b\u653e\u5728\u80f8\u524d\uff0c\u7d27\u5f20\u5730\u63e1\u7740\u623f\u5361\uff0c\u5047\u53d1\u63a9\u76d6\u7684\u8033\u9ea6\u91cc\u518d\u6b21\u4f20\u6765\u961f\u957f\u6797\u8427\u90a3\u78c1\u6027\u6d51\u6734\u7684\u58f0\u97f3\u3002<\/p><p>\u201c\u987e\u5c0f\u5317\uff0c\u51c6\u5907\u597d\u4e86\u5417\uff1f\u201d\u4ed6\u7565\u5fae\u4f4e\u54d1\u7684\u58f0\u97f3\u4e2d\uff0c\u8fd8\u6709\u4e00\u4e1d\u62c5\u5fe7\u3002<\/p><p>\u201c\u597d\u4e86\uff01\u201d<\/p><p>\u987e\u5c0f\u5317\u7528\u6781\u8f7b\u7684\u58f0\u97f3\u56de\u5e94\u7740\uff0c\u8fd9\u662f\u5979\u7b2c\u4e00\u6b21\u51fa\u4efb\u52a1\uff0c\u4e0d\u8fc7\u8fd9\u4e2a\u4efb\u52a1\u6bd4\u60f3\u8c61\u4e2d\u8981\u8270\u96be\uff01<\/p><p>\u5979\u9700\u8981\u626e\u6210\u63f4\u4ea4\u5973\u90ce\u63a5\u8fd1\u76ee\u6807\u7f6a\u72af\uff0c\u5c06\u5979\u6240\u5e26\u7684\u8ff7\u836f\u60f3\u529e\u6cd5\u8ba9\u5bf9\u65b9\u670d\u4e0b\uff0c\u5e76\u914d\u5408\u961f\u53cb\u7684\u6349\u6355\u884c\u52a8\u3002<\/p><p>\u5f88\u7b80\u5355\u4f46\u662f\u4e5f\u5f88\u5371\u9669\u3002<\/p><p>\u987e\u5c0f\u5317\u518d\u6b21\u786e\u5b9a\u4e86\u95e8\u724c\u53f7\uff0c1909\uff0c\u6ca1\u9519\uff01<\/p><p>\u95e8\u91cc\u9762\u5c31\u662f\u4ed6\u4eec\u8981\u6349\u6355\u7684\u5bf9\u8c61\uff0c\u8fd9\u51e0\u5e74\u5728\u4e1c\u5357\u4e9a\u65b0\u8fd1\u5d1b\u8d77\u7684\u5927\u6bd2\u67ad\u3002<\/p><p>\u542c\u8bf4\u8fd9\u4e2a\u7537\u4eba\u5f88\u5e74\u8f7b\uff0c\u559c\u597d\u53d8\u88c5\u51fa\u73b0\uff0c\u5982\u679c\u4e0d\u662f\u8fd9\u6b21\u4ed6\u4eec\u638c\u63e1\u4e86\u786e\u5b9a\u7684\u7ebf\u7d22\uff0c\u4e5f\u4e0d\u4f1a\u5168\u5458\u51fa\u52a8\u3002<\/p><p>\u201c\u987e\u5c0f\u5317\uff0c\u4e0d\u8981\u6015\uff0c\u52a0\u6cb9\uff01\u201d\u8033\u9ea6\u91cc\u4f20\u6765\u6797\u8427\u9f13\u52b1\u7684\u58f0\u97f3\u3002<\/p><p>\u201c\u55ef\uff01\u201d<\/p><p>\u5979\u8f7b\u8f7b\u5730\u56de\u5e94\uff0c\u7136\u540e\u6df1\u6df1\u5730\u5438\u4e86\u4e00\u53e3\u6c14\uff0c\u6574\u7406\u4e86\u4e00\u4e0b\u81ea\u5df1\u7684\u5986\u5bb9\uff0c\u9762\u5411\u8d70\u5eca\u5899\u4e0a\u7684\u955c\u5b50\uff0c\u770b\u5230\u955c\u4e2d\u6620\u51fa\u6765\u5316\u7740\u6d53\u5986\u7684\u5973\u4eba\uff0c\u5979\u771f\u4e0d\u6562\u76f8\u4fe1\u662f\u81ea\u5df1\uff0c\u5c45\u7136\u53ef\u4ee5\u53d8\u5f97\u8fd9\u6837\u3002<\/p><p>\u5c3d\u7ba1\u770b\u4e0a\u53bb\u5f88\u4e0d\u9002\u5e94\uff0c\u4f46\u5979\u8fd8\u662f\u5f88\u5e0c\u671b\u81ea\u5df1\u80fd\u7b26\u5408\u90a3\u4e2a\u5927\u6bd2\u67ad\u7684\u53e3\u5473\u3002<\/p><p>\u5728\u623f\u5361\u5212\u8fc7\u95e8\u9501\u4e0a\u65b9\u540e\uff0c\u2018\u5361\u55d2\u2019\u4e00\u58f0\uff0c\u95e8\u5f00\u4e86\u3002<\/p><p>\u987e\u5c0f\u5317\u9f13\u8db3\u52c7\u6c14\uff0c\u540c\u65f6\u5f88\u8b66\u60d5\u5730\u8d70\u8fdb\u53bb\u3002<\/p><p>\u623f\u95f4\u91cc\u706f\u5149\u6655\u6697\uff0c\u6d74\u5ba4\u91cc\u4f20\u6765\u54d7\u54d7\u7684\u6d41\u6c34\u58f0\uff0c\u76ee\u6807\u4eba\u7269\u679c\u7136\u5728\u8fd9\u91cc\u3002<\/p><p>\u5979\u987a\u4fbf\u89c2\u5bdf\u4e86\u4e00\u4e0b\u623f\u95f4\u5185\u7684\u6446\u8bbe\uff0c\u4e0e\u4e4b\u524d\u4ed6\u4eec\u770b\u5230\u7684\u540c\u7c7b\u623f\u95f4\u4e00\u6837\uff0c\u5fc3\u91cc\u4e0d\u7531\u5f97\u677e\u4e86\u53e3\u6c14\uff0c\u8fd9\u6837\u5c31\u597d\u529e\u591a\u4e86\u3002<\/p><p>\u770b\u4e86\u4e00\u773c\u8155\u4e0a\u7684\u624b\u8868\uff0c\u5979\u8fd8\u6709\u4e0d\u523020\u5206\u949f\u7684\u65f6\u95f4\uff0c\u4e5f\u662f\u8bf4\u5982\u679c20\u949f\u5185\u5979\u4e0d\u628a\u8fd9\u4e2a\u5927\u6bd2\u67ad\u641e\u5b9a\uff0c\u90a3\u4e48\u6709\u5371\u9669\u7684\u4e0d\u6b62\u662f\u5979\uff0c\u8fd8\u8981\u6709\u4e00\u4f1a\u5c31\u51b2\u8fdb\u6765\u7684\u540c\u4e8b\u3002<\/p><p>\u5c31\u5728\u8fd9\u65f6\uff0c\u6d74\u5ba4\u91cc\u7684\u6c34\u58f0\u6d88\u5931\uff0c\u7d27\u63a5\u7740\u95e8\u88ab\u62c9\u5f00\u3002<\/p><p>\u542c\u5230\u58f0\u97f3\u7684\u987e\u5c0f\u5317\u9a6c\u4e0a\u8f6c\u8fc7\u8eab\u53bb\uff0c\u5e76\u523b\u610f\u5730\u6446\u51fa\u6414\u9996\u5f04\u59ff\u5730\u6837\u5b50\u3002<\/p><p>\u4e8e\u662f\u521a\u6d17\u5b8c\u6fa1\u7684\u4e54\u8fc8\uff0c\u5728\u6253\u5f00\u6d74\u5ba4\u95e8\u65f6\uff0c\u5c31\u770b\u5230\u7ad9\u5728\u5e8a\u524d\u7684\u5973\u4eba\u3002<\/p><p>\u5df4\u638c\u5927\u7684\u5c0f\u8138\u51e0\u4e4e\u5168\u662f\u5316\u5986\u54c1\u7684\u989c\u8272\uff0c\u8ba9\u4eba\u770b\u4e0d\u51fa\u6765\u672c\u6765\u7684\u9762\u8c8c\uff0c\u5934\u9876\u5938\u5f20\u7684\u7206\u70b8\u70eb\u53d1\uff0c\u6700\u9192\u76ee\u7684\u8165\u7ea2\u8272\u5634\u5507\uff0c\u5728\u770b\u5230\u4ed6\u8d70\u51fa\u6765\u65f6\u6324\u51fa\u6765\u90a3\u79cd\u4ee4\u4eba\u538c\u6076\u7684\u7b11\u5bb9\u3002<\/p><p>\u4eca\u5929\u662f\u4ed6\u4e8c\u5341\u4e8c\u5c81\u751f\u65e5\uff0c\u770b\u6765\u90a3\u51e0\u4e2a\u6b7b\u515a\u4e0d\u6076\u5fc3\u6b7b\u4ed6\u8a93\u4e0d\u7f62\u4f11\u3002<\/p><p>\u4e3a\u4e86\u8eb2\u907f\u65e0\u804a\u7684\u4e8b\uff0c\u4ed6\u90fd\u5df2\u7ecf\u6362\u4e86\u623f\u95f4\u4e86\uff0c\u7adf\u7136\u8fd8\u80fd\u628a\u8fd9\u79cd\u6781\u54c1\u9001\u5230\u8fd9\u91cc\u6765\u3002<\/p><p>\u4ed6\u4e0d\u7981\u607c\u6012\u5730\u559d\u65a5\u7740\u8bf4\uff1a\u201c\u51fa\u53bb\uff0c\u4e0d\u7ba1\u662f\u8c01\u53eb\u4f60\u6765\u7684\uff0c\u6211\u4e0d\u9700\u8981\u7279\u6b8a\u670d\u52a1\uff01\u201d<\/p><p>\u770b\u5230\u773c\u524d\u8fd9\u4e2a\u53ea\u7cfb\u7740\u6d74\u5dfe\u8eab\u6750\u7edd\u597d\u7684\u7537\u4eba\uff0c\u4ed6\u62e5\u6709\u7740\u5300\u79f0\u7684\u5c0f\u9ea6\u8272\u76ae\u80a4\uff0c\u8179\u808c\u8fd8\u6709\u82e5\u9690\u82e5\u73b0\u7684\u4eba\u9c7c\u7ebf\uff0c\u8ba9\u4eba\u770b\u4e86\u8840\u8109\u55b7\u5f20\u3002<\/p><p>\u987e\u5c0f\u5317\u7684\u8138\u8fd8\u662f\u7ea2\u4e86\uff0c\u4f46\u597d\u5728\u8138\u4e0a\u6709\u7740\u539a\u539a\u7684\u7c89\u5e95\u5e76\u6253\u4e86\u816e\u7ea2\uff0c\u6240\u4ee5\u770b\u8d77\u6765\u5979\u8138\u7ea2\u7684\u5e76\u4e0d\u660e\u663e\u3002<\/p><p>\u4e0d\u8fc7\u66f4\u8ba9\u5979\u60ca\u8bb6\u7684\u662f\uff0c\u8fd9\u4e2a\u4eba\u7adf\u7136\u771f\u5982\u7ebf\u62a5\u6240\u8bf4\u7684\uff0c\u5982\u6b64\u5e74\u8f7b\u3002<\/p><p>\u4ed6\u4eec\u7814\u7a76\u8fd9\u4e2a\u6bd2\u67ad\u65f6\u5e74\u9f84\u5b9a\u4f4d\u572830\u523040\u4e4b\u95f4\uff0c\u53ef\u662f\u56e0\u4e3a\u6ca1\u6709\u4eba\u770b\u8fc7\u4ed6\u7684\u771f\u9762\u76ee\uff0c\u6240\u4ee5\u7684\u786e\u6ca1\u4eba\u77e5\u9053\u4ed6\u771f\u5b9e\u5e74\u9f84\u3002<\/p><p>\u773c\u524d\u7684\u8fd9\u4e2a\u7537\u4eba\uff0c\u58a8\u8272\u7684\u53d1\u4e1d\u4e0a\u8fd8\u6ef4\u7740\u6c34\u6ef4\uff0c\u68f1\u89d2\u5206\u660e\u7684\u8138\u5e9e\uff0c\u4fca\u7f8e\u7cbe\u81f4\u7684\u4e94\u5b98\uff0c\u73b0\u5728\u4ed6\u6ca1\u6709\u8fdb\u884c\u4efb\u4f55\u53d8\u5986\uff0c\u6240\u4ee5\u987e\u5c0f\u5317\u8ba4\u5b9a\uff0c\u773c\u524d\u7684\u8fd9\u5f20\u8138\u5c31\u662f\u6bd2\u67ad\u771f\u5b9e\u7684\u5bb9\u8c8c\u3002<\/p><p>\u5979\u521a\u521a\u5df2\u7ecf\u7b80\u5355\u641c\u4e86\u5e8a\u8fb9\u548c\u4ed6\u7684\u8863\u7269\uff0c\u6ca1\u53d1\u73b0\u67aa\u652f\uff0c\u53ef\u662f\u5e76\u4e0d\u4ee3\u8868\u6b64\u65f6\u5c31\u662f\u5b89\u5168\u7684\u3002<\/p><p>\u201c\u5148\u751f\uff01\u201d<\/p><p>\u987e\u5c0f\u5317\u6545\u610f\u55f2\u7740\u58f0\u97f3\uff0c\u8138\u4e0a\u5806\u6ee1\u4e86\u7b11\u5bb9\uff0c\u8d70\u8fc7\u6765\u65f6\u521a\u4f38\u51fa\u624b\u5374\u88ab\u8fd9\u7537\u4eba\u4e00\u4e0b\u5b50\u6253\u5f00\u3002<\/p><p>\u201c\u6211\u8bf4\u4e86\u4e0d\u9700\u8981\u3002\u201d<\/p><p>\u4e54\u8fc8\u51db\u58f0\u8b66\u544a\u7740\u5979\uff0c\u4e0d\u60f3\u518d\u8ba9\u5979\u9760\u8fd1\uff0c\u4ed6\u662f\u6781\u5176\u8ba8\u538c\u88ab\u8fd9\u79cd\u5973\u4eba\u78b0\u3002<\/p><p>\u56e0\u4e3a\u4ed6\u6709\u8f7b\u5fae\u7684\u6d01\u7656\uff0c\u5c24\u5176\u662f\u5bf9\u8fd9\u79cd\u5973\u4eba\uff0c\u8c01\u77e5\u9053\u5979\u4eec\u8eab\u4e0a\u6709\u6ca1\u6709\u75c5\u3002<\/p><p>\u4ed6\u8fd9\u6837\u7684\u72b6\u51b5\u662f\u987e\u5c0f\u5317\u6ca1\u6599\u5230\u7684\uff0c\u5979\u4ee5\u4e3a\u8fd9\u7c7b\u7537\u4eba\u5e94\u8be5\u5dee\u4e0d\u591a\u90fd\u662f\u7231\u5077\u8165\u7684\u732b\uff0c\u6709\u767d\u767d\u9001\u4e0a\u95e8\u7684\u8273\u798f\uff0c\u80af\u5b9a\u8981\u76f4\u63a5\u6251\u4e0a\u6765\uff0c\u53ef\u5979\u5374\u6ca1\u60f3\u5230\u5982\u6b64\u51fa\u5e08\u4e0d\u5229\u3002<\/p><p>\u201c\u5e05\u54e5\uff01\u201d\u5c31\u7b97\u78b0\u4e86\u4e0b\u9489\u5b50\uff0c\u4f46\u987e\u5c0f\u5317\u4e5f\u6ca1\u6709\u60f3\u9000\u7f29\uff0c\u5979\u6254\u4e86\u4e00\u7c92\u53e3\u9999\u7cd6\u5230\u81ea\u5df1\u5634\u91cc\uff0c\u540c\u65f6\u4e5f\u9012\u7ed9\u8fd9\u4e2a\u7537\u4eba\u3002<\/p><p>\u4e0d\u8fc7\u624b\u4f38\u51fa\u53bb\uff0c\u5374\u4e1d\u6beb\u6ca1\u88ab\u4eba\u5bb6\u653e\u5728\u773c\u91cc\uff0c\u9e1f\u90fd\u4e0d\u9e1f\u4e00\u4e0b\u3002<\/p><p>\u201c\u96be\u9053\u4ed6\u4eec\u6ca1\u4ed8\u4f60\u94b1\uff1f\u201d\u4e54\u8fc8\u76b1\u7740\u7709\u5934\u8bf4\u7740\uff0c\u51b7\u5cfb\u7684\u8138\u4e0a\u591a\u4e86\u51e0\u5206\u4e0d\u8010\u70e6\u3002<\/p><p>\u6ce8\u610f\u5230\u8fd9\u4e2a\u7537\u4eba\u8138\u4e0a\u660e\u663e\u7684\u4e0d\u8010\u70e6\uff0c\u987e\u5c0f\u5317\u77e5\u9053\u81ea\u5df1\u4e5f\u6ca1\u6709\u591a\u5c11\u65f6\u95f4\u80fd\u8017\u4e0b\u53bb\u3002<\/p><p>10\u5206\u949f\u5185\u5982\u679c\u518d\u6b21\u641e\u4e0d\u5b9a\u4ed6\uff0c\u5979\u8fd9\u6b21\u4efb\u52a1\u7b97\u5f7b\u5e95\u5931\u8d25\u5427\uff01<\/p><p>\u4e0d\u4ec5\u5931\u8d25\uff0c\u66f4\u4f1a\u8fde\u7d2f\u5230\u5176\u4ed6\u7684\u540c\u4e8b\u4eec\uff0c\u51b5\u4e14\u8fd9\u662f\u5979\u7b2c\u4e00\u6b21\u4efb\u52a1\uff0c\u5979\u4e0d\u5141\u8bb8\u81ea\u5df1\u5931\u8d25\u3002<\/p><p>\u60f3\u5230\u8fd9\u513f\uff0c\u5979\u4f38\u51fa\u624b\u81c2\uff0c\u76f4\u63a5\u52fe\u4f4f\u4ed6\u7684\u8116\u5b50\u732e\u4e0a\u81ea\u5df1\u7684\u5507\uff0c\u5c3d\u7ba1\u6709\u4e9b\u7b28\u62d9\uff0c\u4f46\u52a8\u4f5c\u5374\u5f88\u5feb\uff0c\u5e76\u5c06\u5634\u91cc\u521a\u521a\u90a3\u9897\u53e3\u9999\u7cd6\u7528\u5c0f\u820c\u63a8\u5230\u8fd9\u4e2a\u7537\u4eba\u7684\u53e3\u4e2d\u3002<\/p><p>\u8fd9\u4e2a\u5973\u4eba\u6240\u505a\u7684\u4e00\u5207\u90fd\u662f\u4e54\u8fc8\u6240\u6599\u4e0d\u53ca\u7684\uff0c\u4ed6\u6ca1\u60f3\u5230\u600e\u4e48\u5728\u8fd9\u4e2a\u5973\u4eba\u9760\u8fd1\u65f6\uff0c\u4ed6\u5fd8\u4e86\u63a8\u5f00\u5979\u3002<\/p><p>\u611f\u53d7\u8fd9\u67d4\u8f6f\u7684\u8eab\u4f53\u76f4\u63a5\u8d34\u7740\u4ed6\uff0c\u90a3\u4e24\u6761\u624b\u81c2\u50cf\u86c7\u4e00\u6837\u7f20\u4f4f\u4ed6\u7684\u8116\u5b50\uff0c\u5f53\u611f\u89c9\u90a3\u7075\u52a8\u7684\u5c0f\u820c\u5c06\u67d0\u79cd\u4e1c\u897f\u63a8\u5230\u4ed6\u53e3\u4e2d\u65f6\uff0c\u4e54\u8fc8\u5728\u5fc3\u91cc\u51b7\u7b11\uff0cMD\u4e00\u53ea\u9e21\u800c\u5df2\u7adf\u7136\u4e5f\u6562\u7b97\u8ba1\u4ed6\u4e54\u4e09\u3002<\/p>","words":"2436","nextCharpter":{"id":"911379","charpterName":"\u7b2c2\u7ae0 \u5949\u966a\u5230\u5e95"},"lastCharpter":null};
+			this.charpters.push(this.charpters_obj[1]);
+			this.getCategory();	    },methods:{
+	    	goPay : function(){
+	    		this.waitpay = 1;
+	    		console.log(this.waitpay);
+	    		window.open('/recharge');
+	    	},
+	    	finshPay : function(){
+	    		window.location.href="/book/"+this.bookInfo.id+"/0/"+this.sort;
+	    	},
+	    	//提交阅读记录  页面触底触发
+	        recordReadlog: function(){
+				var that = this;
+				var readwhole = 0;
+				var sort = that.sort;
+				if(that.last_readlog_sort == sort ) return ;
+			    if (sort == that.cnum)
+			      readwhole = 1;
+			    if(!that.charpters_obj[sort]) return;
+			    if(!that.userInfo){
+
+					var readlog = $.cookie('readlog');
+			        if (readlog){
+			        	readlog = JSON.parse(readlog);
+			        	readlog[that.bookInfo.id] = sort;
+			        }else{
+			        	readlog = {};
+			        	readlog[that.bookInfo.id] = sort;
+			        }
+			        
+		    	    $.cookie('readlog', JSON.stringify(readlog), {path:'/'});//新增本地阅读记录
+			    	return;
+			    }
+			    
+	        	var log_data = { bid: that.bookInfo.id, sort: sort, charpter_name: that.charpters_obj[sort].charpterName, cid: that.charpters_obj[sort].cid, readwhole: readwhole};
+		        httpRequest('/api1/user/readLog', log_data, function () {
+		        	that.last_readlog_sort = sort;
+		        });
+	        },
+	        mouseover: function(e) {
+	        	var self = this;
+	        	var gid;
+	        	self.show_redlog = 1;
+	        	gid = setTimeout(function() {
+	                clearTimeout(gid);
+	                $(document).on('mousemove', checkMouseMove);
+	                function checkMouseMove(evt) {
+	                  var isContains = $.contains( $('.layer_lately_wrapper')[0], evt.target ) || $('.layer_lately_wrapper')[0] === evt.target
+	                  if (!isContains) {
+	                	 self.show_redlog = 0;
+	                	 $(document).off('mousemove', checkMouseMove);
+	                  }
+	                }
+	              }, 500)
+	        },
+			getUserInfo: function() {/*  获取用户信息  */
+				var that = this;
+				if(that.uid == 0){
+		        	return;
+				}
+	        	httpRequest('/api1/user/info', { pull: 1 }, function (data) {
+	        		that.userInfo = data.data;
+	        	})
+			},
+			getReadDetail: function() {/*  获取阅读记录  */
+				var that = this;
+				if(that.uid == 0){
+		        	return;
+				}
+	        	httpRequest('/api1/user/readDetail', { pull: 1 }, function (data) {
+	        		that.readlogs = data;
+	        		that.show_redlog = 1;
+	        	});
+			},
+	    	showBox:function(){/* 显示隐藏弹窗  */
+	    		this.show_setbox=0,
+	    		this.show_redlog=0,
+	    		this.show_charpters=0,
+	    		this.show_qrcodebox=0;
+	    	},
+	    	addBookShelf: function() {
+				var that = this;
+				if(that.uid == 0){
+		        	showMsg('请先登录');
+		        	return;
+				}
+				if(that.inBookShelf == 1) return;
+			    var data = {
+				        bid: 11927,
+				        name: '天才宝贝的猎爹计划',
+				        thumb: 'https://p.qirexiaoshuo.com/uploads/image/20170213/58a1263d4571a.jpg',
+				        sort: that.sort,
+				        mmtime: 1521110471000,
+				        readStamp: Date.parse(new Date()),
+				      };
+		        httpRequest('/api1/user/addBook', data, function (rs) {
+		        	showMsg('添加到书架成功');
+				    that.inBookShelf = 1;
+		        });
+			},
+			getCategory: function(sort) {
+				var that = this;
+			    var data = {
+			        bid: 11927,
+			      };
+		        httpRequest('/api1/book/category', data, function (rs) {
+		        	that.category = ( rs.charpterData )
+		        });
+			},
+			getCharpter: function(sort,is_unlocked) {
+				var that = this;
+			    var data = {
+				        bid: 11927,
+				        sort: sort,
+				      };
+
+			    if(that.auto_unlock == 1 && !is_unlocked && that.userInfo){
+			    	//自动解锁打开并且这章是未解锁时
+			    	if(that.category && that.category[sort-1]['vip'] == 2 && that.category[sort-1]['unlock'] == 0){
+			    		var unlockBookcoin = 0;
+			    	    //计算解锁书币价格
+			    	    unlockBookcoin = (parseInt(that.category[sort-1].words) / 1000) * 0.07 * 10;			//该章所需书币总额
+			    	    unlockBookcoin = Math.round((unlockBookcoin * 10)) / 10;
+			    	    that.sort = sort;
+			    	    that.unlockCharpter();
+			    	    return;
+			    	}
+			    }
+	        	if(that.charpters_obj[sort] && that.charpters_obj[sort].content != ''){
+	        		that.sort = sort;
+			    	if(that.read_type == 'book'){
+			    		document.documentElement.scrollTop = 0;
+			    	}
+			    	return;
+	        	}
+		        httpRequest('/api1/book/charpter', data, function (rs) {
+		        	var charpter_data = rs.charpterData[0];
+		        	that.charpters.push( charpter_data )
+		        	that.charpters_obj[charpter_data['sort']] = charpter_data;
+		        	that.sort = sort;
+			    	if(that.read_type == 'book'){
+			    		document.documentElement.scrollTop = 0;
+			    	}
+			    	if(!that.category){
+						that.getCategory();
+			    	}
+			    	
+			    	if($("#charpter_"+sort)){
+	                    setTimeout(function(){
+	                        $("html,body").animate({scrollTop:$("#charpter_"+sort).offset().top},1000)
+	                    },500);
+			    	}
+			    	if(charpter_data['vip'] == 2){
+			    		var unlockBookcoin = 0;
+			    	    //计算解锁书币价格
+			    	    unlockBookcoin = (parseInt(charpter_data.words) / 1000) * 0.07 * 10;			//该章所需书币总额
+			    	    unlockBookcoin = Math.round((unlockBookcoin * 10)) / 10;
+			    	    that.unlockBookcoin = unlockBookcoin;
+			    	}else if(charpter_data['vip'] == 3 && that.unlockBookcoin == 0){
+			    		var total = that.bookInfo.short_num;
+		    	        if (that.bookInfo.short_type == 1){/* 现金单位 */
+		    	            total = total * 10;
+		    	        }
+			    	    that.unlockBookcoin = total;
+			    	}
+		        });
+			},
+			unlockCharpter: function(){
+				
+				var that = this;
+				var userinfo = that.userInfo;
+				if(!userinfo ) return;
+				var coins = that.unlockBookcoin;
+				//用户vip 八折
+				if (userinfo['vip'] == 1) {
+					coins = Math.round(coins * 0.8 * 10) / 10;
+				}
+				var balance = userinfo['bookvoucher'] + userinfo['v2_bookcoin'];
+
+				if (that.bookInfo.vip == 1) {
+					//不是vip  去开通
+	    			this.waitpay = 1;
+					window.open('/recharge/vip');
+				}
+				
+				if (balance < coins) {
+					//去支付
+	    			this.waitpay = 1;
+					window.open('/recharge');
+				} else if (balance > coins) {
+					var sort = that.sort;
+					//去解锁
+					if (that.bookInfo.vip == 2) {
+						httpRequest('/api1/user/unlockCharpter', {
+							bid: that.bookInfo.id,
+							sort: sort
+						},
+						function(data) {
+							that.getCharpter(sort,1); //重新获取章节内容
+							that.getUserInfo();//更新用户余额
+							that.category[sort-1]['unlock'] = 1;
+						},
+						1,
+						function(data) { //失败方法
+							if (data.msg == '用户余额不足') {
+								that.getUserInfo();//更新用户余额
+							}
+						});
+					} else if (that.bookInfo.vip == 3) {
+						httpRequest('/api1/user/unlockBook', {
+							bid: that.bookInfo.id
+						},
+						function(data) {
+							for(index in that.category){
+								that.category[index]['unlock'] = 1;
+							}
+							that.getCharpter(sort,1); //重新获取章节内容
+							that.getUserInfo();//更新用户余额
+						});
+					}
+					//解锁成功后加入书架
+					if (that.inBookShelf == 0) {
+						that.addBookShelf();
+					}
+				}
+			},
+			nextCharpter: function(){
+				if(this.read_type == 'screen' && this.charpters_obj[this.sort] && this.charpters_obj[this.sort].vip>0 && this.charpters_obj[this.sort].unlock==0){
+					return;//如果瀑布流最后一个未解锁，不继续加载
+				}
+				if(this.charpters_obj[this.sort+1] && this.read_type == 'screen'){
+					return;//如果瀑布流下一个已存在
+				}
+				
+				if(this.sort==this.cnum){
+					showMsg('已经是最后一章了');
+					return;
+				}
+				this.getCharpter(this.sort+1);
+			},
+			lastCharpter: function(){
+				if(this.sort==1) {
+					showMsg('已经是第一章了');
+					return;
+				}
+				this.getCharpter(this.sort-1);
+			},
+			getSetting: function(){
+				var setting = $.cookie('setting');
+		        if (setting){
+					setting = JSON.parse(setting);
+
+			    	this.theme=setting.theme,
+			    	this.font_family=setting.font_family,
+			    	this.read_type=setting.read_type,
+			    	this.font_size=setting.font_size;
+		        }
+			},
+			saveSetting: function(){
+    			var setting = {
+   					theme:         this.theme,		
+   					font_family:   this.font_family,
+   					read_type:     this.read_type,  
+   					font_size:     this.font_size  
+    			};
+
+	    	    $.cookie('setting', JSON.stringify(setting), {path:'/'});
+			}
+	    },
+	    watch:{
+	    	theme : function(val, oldVal){
+	    		this.saveSetting();
+	        },
+	        font_family : function(val, oldVal){
+	    		this.saveSetting();
+	        },
+	        read_type : function(val, oldVal){
+	    		this.saveSetting();
+	        },
+	        font_size : function(val, oldVal){
+	        	if(val<=11){
+	        		this.font_size = oldVal;
+	        	}else if(val>=49){
+	        		this.font_size = oldVal;
+	        	}
+	    		this.saveSetting();
+	        },
+	        show_redlog : function(val, oldVal){
+	        	if(val == 1 && !this.readlogs){
+	        		this.getReadDetail();
+	        	}
+	        }
+	    }
+    });
+    var onscroll_ = false;
+    window.onscroll = function () {
+
+	    if (!onscroll_ && (($(document).scrollTop()+10) >= $(document).height() - $(window).height())) {
+
+    		onscroll_ = true;
+	    	vm.recordReadlog()
+	    	if(vm.read_type == 'screen'){
+	        	vm.nextCharpter();
+	    	}
+	    	setTimeout(function(){
+	    		onscroll_ = false;
+	    	},2000)
+	    }
+	};
+
+
+	var leftBar = $('.float_wrap');
+	var nowLeftTop = leftBarTop = 150;
+	$(window).scroll(function () {
+			var winScrollTop = $(window).scrollTop();
+			//当滚动条位置大于leftBar距顶部的位置时,并且 nowLeftTop != 0 
+			if (winScrollTop >= leftBarTop && nowLeftTop != 0) {
+				nowLeftTop = 0;
+				leftBar.css('top', nowLeftTop);
+			} else if (winScrollTop < leftBarTop) {
+				nowLeftTop = leftBarTop - winScrollTop;
+				leftBar.css('top', nowLeftTop);
+			}
+		});
+
+
+
+    </script>
+    
+	<footer class="footer mar_top">
+		
+	            <div class="copyright">
+            <span>
+                <a href="/about.html" target="_blank">关于我们</a>
+                <em>|</em>
+                <a href="/contact.html" target="_blank">联系我们</a>
+                <em>|</em>
+                <a href="/copyright.html" target="_blank">版权声明</a>
+                <em>|</em>
+                <a href="http://writer.qirexiaoshuo.com/" target="_blank">作者中心</a>
+                <em>|</em>
+                <a href="/map.html" target="_blank">网站地图</a>
+            </span>
+            <p>Copyright ©2019 奇热小说 All Rights Reserved 湘ICP证B2-20190012号   湘ICP备15004033号</p>
+            <p>健康阅读公告：抵制不良信息，支持正版小说；加强自我保护意识，谨防受骗；合理安排阅读时间，享受健康生活乐趣。</p>
+        </div>
+    </footer>
+	
+    	<script>
+		var slide_item = null;
+
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?9ed2be7ae49dbc8829f60b2d671b5654";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+
+	</script>
+</body>
+</html>

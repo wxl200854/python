@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 import time
 from pyquery import PyQuery as pq
 
-browser = webdriver.PhantomJS()
+browser = webdriver.Chrome()
 
 def get_all_url():
         try:

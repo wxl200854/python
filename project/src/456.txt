@@ -1,0 +1,101 @@
+<html>
+ <body>
+  <h2>
+   资源名称
+  </h2>
+  <p>
+   范保德.Father.to.Son.2018.HD720P.X264.AAC.Mandarin.CHT.mp4
+  </p>
+  <h2>
+   资源链接
+  </h2>
+  <p>
+   magnet:?xt=urn:btih:793878694E5E0EE33B40D9040FE3CD3201F7F6AB
+  </p>
+  <div class="down123" style="margin-top:15px;">
+   <a href="magnet:?xt=urn:btih:793878694E5E0EE33B40D9040FE3CD3201F7F6AB">
+    磁力下载
+   </a>
+   <!--<a href="http://bt.btbtdy.com/bt.php?793878694E5E0EE33B40D9040FE3CD3201F7F6AB" target="_blank">种子一</a><a href="http://bt.btbtdy.com/?torrent/793878694E5E0EE33B40D9040FE3CD3201F7F6AB" target="_blank">种子二</a>-->
+   <a href="thunder://QUFtYWduZXQ6P3h0PXVybjpidGloOjc5Mzg3ODY5NEU1RTBFRTMzQjQwRDkwNDBGRTNDRDMyMDFGN0Y2QUJaWg==">
+    迅雷下载
+   </a>
+   <!--<a href="http://lixian.vip.xunlei.com/lixian_login.html?referfrom=union&ucid=20369&furl=thunder://QUFtYWduZXQ6P3h0PXVybjpidGloOjc5Mzg3ODY5NEU1RTBFRTMzQjQwRDkwNDBGRTNDRDMyMDFGN0Y2QUJaWg==">迅雷离线</a>-->
+   <a href="http://d.miwifi.com/d2r/?url=bWFnbmV0Oj94dD11cm46YnRpaDo3OTM4Nzg2OTRFNUUwRUUzM0I0MEQ5MDQwRkUzQ0QzMjAxRjdGNkFC" target="_blank">
+    小米路由
+   </a>
+  </div>
+  <h2>
+   下载提示
+  </h2>
+  <div class="prompt">
+   1. 本站建议下载使用专业BT软件下载电影，如：
+   <a href="https://www.bitcomet.com/cn" rel="nofollow" style="color:#337ab7;" target="_blank">
+    比特彗星
+   </a>
+   ，
+   <a href="http://www.bitspirit.cc" rel="nofollow" style="color:#337ab7;" target="_blank">
+    比特精灵
+   </a>
+   ，
+   <a href="http://www.utorrent.com/intl/zh_cn/" rel="nofollow" style="color:#337ab7;" target="_blank">
+    uTorrent
+   </a>
+   ，
+   <a href="https://www.qbittorrent.org/download.php" rel="nofollow" style="color:#337ab7;" target="_blank">
+    qBittorrent
+   </a>
+   ，
+   <a href="http://www.xunlei.com/" rel="nofollow" style="color:#337ab7;" target="_blank">
+    迅雷
+   </a>
+   等. 分享：
+   <a href="http://www.xiaodao.la/sousuo.asp?SearchText=%D1%B8%C0%D7" rel="nofollow" style="color:#337ab7;" target="_blank">
+    迅雷加速
+   </a>
+   -
+   <a href="http://www.xiaodao.la/sousuo.asp?SearchText=%B0%D9%B6%C8%CD%F8%C5%CC" rel="nofollow" style="color:#337ab7;" target="_blank">
+    网盘加速
+   </a>
+   .
+   <br/>
+   2. 本站资源大多无字幕需要去专业字幕站下载字幕后,外挂字幕观看.如
+   <a href="http://www.zimuku.cn/" rel="nofollow" style="color:#337ab7;" target="_blank">
+    字幕库
+   </a>
+   ，
+   <a href="http://subhd.com/" rel="nofollow" style="color:#337ab7;" target="_blank">
+    SubHD
+   </a>
+   等. 也可以使用
+   <a href="https://www.splayer.org/" rel="nofollow" style="color:#337ab7;" target="_blank">
+    射手影音
+   </a>
+   ，
+   <a href="http://video.xunlei.com/" rel="nofollow" style="color:#337ab7;" target="_blank">
+    迅雷影音
+   </a>
+   等播放软件自动匹配字幕.
+  </div>
+  <h2>
+   全部资源
+  </h2>
+  <div class="p_list" style="width:950px;">
+   <ul class="p_list_02" style="width:950px;">
+    <li>
+     <a class="ico_1" href="/down/14817-0-0.html" target="_blank" title="范保德.Father.to.Son.2018.HD720P.X264.AAC.Mandarin.CHT.mp4">
+      范保德.Father.to.Son.2018.HD720P.X264.AAC.Mandarin.CHT.mp4
+      <span class="bt">
+       详情
+      </span>
+     </a>
+     <span>
+      <a class="d1" href="magnet:?xt=urn:btih:793878694E5E0EE33B40D9040FE3CD3201F7F6AB">
+       磁力
+      </a>
+     </span>
+    </li>
+   </ul>
+  </div>
+ </body>
+</html>
